@@ -9,3 +9,9 @@ import sqlContext.implicits._
 
 val sample = hiveObj.sql("select * from table").collect()
 val resultDF = sqlContext.sql("select * from test.emp where empid=100")
+
+
+
+scala> hiveObj.refreshTable("cloudera.test1")
+
+scala> val s = hiveObj.sql("select * from cloudera.test1").collect()
